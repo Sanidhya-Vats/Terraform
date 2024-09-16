@@ -26,4 +26,5 @@ module "rg-module" {
     source = "../../Modules/vm"
     rg-name = "Sanidhya"
     rg-location = "westeurope"
+  
   }
