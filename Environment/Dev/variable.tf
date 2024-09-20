@@ -10,3 +10,6 @@ variable "stg-details" {
   variable "subnet-details" {
     
   }
+  variable "vm-details" {
+    
+  }
