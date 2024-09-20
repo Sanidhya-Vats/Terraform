@@ -1,32 +1,35 @@
 
 resource "azurerm_public_ip" "pip-block" {
-  name = "${var.rg-name}-pip"
-  resource_group_name = var.rg-name
-  location = var.rg-location
+  for_each = var.vm
+  name = "${each.key}-pip"
+  resource_group_name =each.value.resource_group_name
+  location = each.value.location
   allocation_method = "Static"
 }
 resource "azurerm_network_interface" "nic-block" {
-  name                ="${var.rg-name}-nic"
-  location            = var.rg-location
-  resource_group_name = var.rg-name
+  for_each = var.vm
+  name                ="${each.key}-nic"
+  location            = each.value.location
+  resource_group_name = each.value.resource_group_name
 
   ip_configuration {
-    name                          = "internal"
-    subnet_id                     = data.azurerm_subnet.sub-data.id
+    name                          = each.value.ip_name
+    subnet_id                     = data.azurerm_subnet.sub-data[each.key].id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id = azurerm_public_ip.pip-block.id
+    public_ip_address_id = azurerm_public_ip.pip-block[each.key].id
   }
 }
 
 resource "azurerm_linux_virtual_machine" "vm-block" {
-  name                = "${var.rg-name}-machine"
-  resource_group_name = var.rg-name
-  location            = var.rg-location
-  size                = "Standard_F2"
-  admin_username      = "adminuser"
-  admin_password = "Sanidhya@123"
+  for_each = var.vm
+  name                = "${each.key}-machine"
+  resource_group_name =  each.value.resource_group_name
+  location            = each.value.location
+  size                = each.value.size
+  admin_username      = each.value.admin_username
+  admin_password = each.value.admin_password
   disable_password_authentication= false
-  network_interface_ids = [azurerm_network_interface.nic-block.id]
+  network_interface_ids = [azurerm_network_interface.nic-block[each.key].id]
 
   
 

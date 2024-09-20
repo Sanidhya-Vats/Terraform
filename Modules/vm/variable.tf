@@ -1,6 +1,3 @@
-variable "rg-name" {
-  
-}
-variable "rg-location" {
+variable "vm" {
   
 }

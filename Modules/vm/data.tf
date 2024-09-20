@@ -1,5 +1,6 @@
 data "azurerm_subnet" "sub-data" {
-  name                 = "Sanidhya-subnet"
-  virtual_network_name ="Sanidhya-network"
-  resource_group_name  = var.rg-name
+  for_each = var.vm
+  name                 = each.value.sub_name
+  virtual_network_name =each.value.virtual_net_name
+  resource_group_name  = each.value.resource_group_name
 }
