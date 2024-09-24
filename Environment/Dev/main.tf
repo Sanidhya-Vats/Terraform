@@ -27,3 +27,9 @@ module "rg-module" {
    vm = var.vm-details
 
   }
+
+module "bastion-module" {
+  depends_on = [ module.vnet-module ]
+  source = "../../Modules/bastion"
+  bastion = var.bastion-details
+}

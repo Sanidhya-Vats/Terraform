@@ -1,11 +1,11 @@
 
-resource "azurerm_public_ip" "pip-block" {
-  for_each = var.vm
-  name = "${each.key}-pip"
-  resource_group_name =each.value.resource_group_name
-  location = each.value.location
-  allocation_method = "Static"
-}
+# resource "azurerm_public_ip" "pip-block" {
+#   for_each = var.vm
+#   name = "${each.key}-pip"
+#   resource_group_name =each.value.resource_group_name
+#   location = each.value.location
+#   allocation_method = "Static"
+# }
 resource "azurerm_network_interface" "nic-block" {
   for_each = var.vm
   name                ="${each.key}-nic"
@@ -13,10 +13,10 @@ resource "azurerm_network_interface" "nic-block" {
   resource_group_name = each.value.resource_group_name
 
   ip_configuration {
-    name                          = each.value.ip_name
+    name                          = "${each.key}-ip"
     subnet_id                     = data.azurerm_subnet.sub-data[each.key].id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id = azurerm_public_ip.pip-block[each.key].id
+    
   }
 }
 

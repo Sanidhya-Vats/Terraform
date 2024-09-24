@@ -13,3 +13,6 @@ variable "stg-details" {
   variable "vm-details" {
     
   }
+    variable "bastion-details" {
+    
+  }
