@@ -26,8 +26,8 @@ resource "azurerm_linux_virtual_machine" "vm-block" {
   resource_group_name =  each.value.resource_group_name
   location            = each.value.location
   size                = each.value.size
-  admin_username      = each.value.admin_username
-  admin_password = each.value.admin_password
+  admin_username      = data.azurerm_key_vault_secret.username.value
+  admin_password = data.azurerm_key_vault_secret.password.value
   disable_password_authentication= false
   network_interface_ids = [azurerm_network_interface.nic-block[each.key].id]
 
