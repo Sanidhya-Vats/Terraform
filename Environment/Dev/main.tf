@@ -20,9 +20,12 @@ module "rg-module" {
     source = "../../Modules/subnet"
     subnet = var.subnet-details
   }
-  
+  module "keyvault-module" {
+    depends_on = [ module.rg-module ]
+    source = "../../Modules/keyvault"
+  }
   module "vm-module" {
-    depends_on = [ module.subnet-module ]
+    depends_on = [ module.subnet-module,module.keyvault-module ]
     source = "../../Modules/vm"
    vm = var.vm-details
 

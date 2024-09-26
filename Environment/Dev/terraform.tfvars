@@ -71,7 +71,6 @@ vm-details = {
     resource_group_name = "Sanidhya"
     location            = "west europe"
     size                = "Standard_F2"
-
     sub_name            = "Sanidhya-subnet"
     virtual_net_name    = "Sanidhya-network"
 
@@ -80,7 +79,6 @@ vm-details = {
     resource_group_name = "Sanidhya"
     location            = "west europe"
     size                = "Standard_F2"
-
     sub_name            = "Sanidhya-subnet"
     virtual_net_name    = "Sanidhya-network"
   }

@@ -6,14 +6,6 @@ data "azurerm_subnet" "sub-data" {
 }
 
 data "azurerm_key_vault" "keyvault-block" {
-  name                = "Vats-keyvault"
-  resource_group_name = "Vats"
-}
-data "azurerm_key_vault_secret" "password" {
-  name         = "vmpassword"
-  key_vault_id = data.azurerm_key_vault.keyvault-block.id
-}
-data "azurerm_key_vault_secret" "username" {
-  name         = "vmusername"
-  key_vault_id = data.azurerm_key_vault.keyvault-block.id
+  name                = "Sanidhya-keyvault"
+  resource_group_name = "Sanidhya"
 }
