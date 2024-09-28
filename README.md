@@ -1,6 +1,7 @@
+
 # Azure Infrastructure Deployment with Terraform
 
-This repository contains Terraform configurations for deploying resources on Microsoft Azure. It is designed to automate the provisioning of a resource group and storage account using variable management.
+This repository contains Terraform configurations for deploying resources on Microsoft Azure. It is designed to automate the provisioning of a resource group and storage account using modular code and variable management.
 
 ## Project Overview
 
@@ -29,47 +30,55 @@ The repository contains the following files:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/Sanidhya-Vats/Terraform.git
-   cd Terraform
+   git clone https://github.com/yourusername/your-repo-name.git
+   cd your-repo-name
+   ```
 
-2.Set your Azure credentials: Ensure you are authenticated with Azure CLI:
+2. **Set your Azure credentials**:
+   Ensure you are authenticated with Azure CLI:
+   ```bash
+   az login
+   ```
 
-  ``bash
-  az login
-Customize the variables: Open terraform.tfvars and modify the variables according to your requirements.
+3. **Customize the variables**:
+   Open `terraform.tfvars` and modify the variables according to your requirements.
 
-3.**Deploying Infrastructure**
-a.**Initialize Terraform**:
+### Deploying Infrastructure
 
-  ``bash
-  Copy code
-  terraform init
-b.**Plan the deployment**:
+1. **Initialize Terraform**:
+   ```bash
+   terraform init
+   ```
 
-  ``bash
-  Copy code
-  terraform plan
-c.**Apply the configuration**:
+2. **Plan the deployment**:
+   ```bash
+   terraform plan
+   ```
 
-``bash
-Copy code
-terraform apply
-**Confirm the action when prompted.**
+3. **Apply the configuration**:
+   ```bash
+   terraform apply
+   ```
 
-4.**Cleaning Up**
+   Confirm the action when prompted.
+
+### Cleaning Up
+
 To remove the resources created by Terraform, run:
-
-``bash
-Copy code
+```bash
 terraform destroy
+```
 
+## Contributing
 
-**Contributing**
 Contributions are welcome! Please open an issue or submit a pull request if you have suggestions or improvements.
 
-**License**
+## License
+
 This project is licensed under the MIT License.
 
-**Acknowledgments**
+## Acknowledgments
+
 Thank you for checking out this repository! Feel free to connect if you have any questions or feedback.
+```
 
