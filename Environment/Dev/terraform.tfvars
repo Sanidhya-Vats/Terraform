@@ -1,5 +1,4 @@
-rg-details = { Mradul = "southindia",
-  Naresh = "Centralindia",
+rg-details = { 
 Sanidhya = "west europe" }
 
 stg-details = {
@@ -67,7 +66,7 @@ subnet-details = {
 
 
 vm-details = {
-  vm1 = {
+  Frontendvm = {
     resource_group_name = "Sanidhya"
     location            = "west europe"
     size                = "Standard_F2"
@@ -75,7 +74,7 @@ vm-details = {
     virtual_net_name    = "Sanidhya-network"
 
   }
-  vm2 = {
+  Backendvm = {
     resource_group_name = "Sanidhya"
     location            = "west europe"
     size                = "Standard_F2"
