@@ -1,20 +1,20 @@
 
-# Terraform Single VM Deployment
+# Terraform Looped Storage Account Deployment
 
-This branch contains Terraform configurations for deploying a single virtual machine (VM) in a cloud environment. It demonstrates how to provision a VM using best practices in infrastructure as code (IaC) with Terraform.
+This branch contains Terraform configurations for provisioning multiple storage accounts using a loop. This approach demonstrates how to efficiently create resources in bulk with Terraform.
 
 ## Project Overview
 
-The **Single-vm** branch is designed to showcase a straightforward setup for deploying a single VM on your chosen cloud provider. This example includes all necessary configurations and best practices to ensure a smooth deployment.
+The **Storage-Looped** branch is designed to showcase how to use Terraform's looping constructs to create multiple storage accounts based on a specified count or list. This example is ideal for scenarios where you need to manage several storage accounts programmatically.
 
 ## File Structure
 
 The branch contains the following files:
 
-- **`main.tf`**: The main Terraform configuration file for provisioning the VM.
-- **`variables.tf`**: Defines the input variables for customization.
-- **`terraform.tfvars`**: Contains the variable values for the deployment.
-- **`outputs.tf`**: Specifies the outputs for the deployed resources.
+- **`main.tf`**: The main Terraform configuration file that provisions multiple storage accounts using loops.
+- **`variables.tf`**: Defines the input variables for customization, including the number of storage accounts and their properties.
+- **`terraform.tfvars`**: Contains variable values specific to the deployment, including settings like location and account prefixes.
+- **`outputs.tf`**: Specifies the outputs for the deployed storage accounts, such as their names and primary access keys.
 - **`README.md`**: This file, providing an overview of the branch.
 
 ## Getting Started
@@ -22,7 +22,7 @@ The branch contains the following files:
 ### Prerequisites
 
 - [Terraform](https://www.terraform.io/downloads.html) installed on your machine.
-- An active account with the cloud provider (e.g., AWS, Azure, GCP).
+- An active account with the cloud provider (e.g., Azure).
 - Cloud CLI installed for authentication (optional but recommended).
 
 ### Configuration
@@ -31,13 +31,13 @@ The branch contains the following files:
    ```bash
    git clone https://github.com/Sanidhya-Vats/Terraform.git
    cd Terraform
-   git checkout Single-vm
+   git checkout Storage-Looped
    ```
 
 2. **Customize the variables**:
-   Open `terraform.tfvars` and modify the variables according to your requirements, such as the VM size, region, and image.
+   Open `terraform.tfvars` and modify the variables according to your requirements, such as the number of storage accounts, prefixes, and location.
 
-### Deploying the VM
+### Deploying the Storage Accounts
 
 1. **Initialize Terraform**:
    ```bash
@@ -76,4 +76,4 @@ This project is licensed under the MIT License.
 Thank you for checking out this branch! Feel free to connect if you have any questions or feedback.
 ```
 
-Feel free to customize this README to fit your specific project details or style! Let me know if you need any changes.
+You can copy and paste this into your `README.md` file for the Storage Looped branch. Let me know if you need any modifications!
