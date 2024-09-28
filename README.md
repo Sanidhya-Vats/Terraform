@@ -1,49 +1,43 @@
 
-# Azure Infrastructure Deployment with Terraform
+# Terraform Storage Account Deployment
 
-This repository contains Terraform configurations for deploying resources on Microsoft Azure. It is designed to automate the provisioning of a resource group and storage account using modular code and variable management.
+This branch contains Terraform configurations for provisioning a storage account in a cloud environment. It demonstrates best practices in infrastructure as code (IaC) using Terraform.
 
 ## Project Overview
 
-This project leverages Terraform to manage Azure resources efficiently. The configurations provided in this repository are modular and utilize variables for easy customization and scalability.
+The **Storage-Account-Normal** branch is designed to showcase how to create a standard storage account on your chosen cloud provider. This example includes the necessary configurations for setting up a storage account with optimal settings.
 
 ## File Structure
 
-The repository contains the following files:
+The branch contains the following files:
 
-- **`provider.tf`**: Configures the Azure provider for Terraform.
-- **`rg.tf`**: Contains the code for creating the resource group.
-- **`storage.tf`**: Contains the code for creating the storage account.
-- **`terraform.tfvars`**: Provides variable values for the Terraform configuration.
-- **`variable.tf`**: Defines the variables used in the Terraform configuration.
-- **`README.md`**: This file, providing an overview of the project.
+- **`main.tf`**: The main Terraform configuration file for provisioning the storage account.
+- **`variables.tf`**: Defines the input variables for customization, such as location and account name.
+- **`terraform.tfvars`**: Contains variable values specific to the deployment, including settings for the storage account.
+- **`outputs.tf`**: Specifies the outputs for the deployed storage account, such as the account name and primary access key.
+- **`README.md`**: This file, providing an overview of the branch.
 
 ## Getting Started
 
 ### Prerequisites
 
 - [Terraform](https://www.terraform.io/downloads.html) installed on your machine.
-- An active Microsoft Azure account.
-- Azure CLI installed for authentication (optional but recommended).
+- An active account with the cloud provider (e.g., Azure).
+- Cloud CLI installed for authentication (optional but recommended).
 
 ### Configuration
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/Sanidhya-Vats/Terraform.git
+   cd Terraform
+   git checkout Storage-Account-Normal
    ```
 
-2. **Set your Azure credentials**:
-   Ensure you are authenticated with Azure CLI:
-   ```bash
-   az login
-   ```
+2. **Customize the variables**:
+   Open `terraform.tfvars` and modify the variables according to your requirements, such as the storage account name, location, and performance tier.
 
-3. **Customize the variables**:
-   Open `terraform.tfvars` and modify the variables according to your requirements.
-
-### Deploying Infrastructure
+### Deploying the Storage Account
 
 1. **Initialize Terraform**:
    ```bash
@@ -79,6 +73,7 @@ This project is licensed under the MIT License.
 
 ## Acknowledgments
 
-Thank you for checking out this repository! Feel free to connect if you have any questions or feedback.
+Thank you for checking out this branch! Feel free to connect if you have any questions or feedback.
 ```
 
+You can copy and paste this into your `README.md` file for the Storage Account Normal branch. Let me know if you need any adjustments!
