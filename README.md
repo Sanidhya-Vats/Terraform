@@ -1,4 +1,4 @@
-# Terraform VM with Key Vault and Random Secret Bastion
+# Terraform VM with Key Vault and Random Secret and Bastion
 
 This repository contains Terraform configurations for provisioning an Azure Virtual Machine (VM) with an Azure Key Vault to securely manage secrets, including a randomly generated secret for VM access, along with a Bastion host for secure management.
 
