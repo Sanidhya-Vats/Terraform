@@ -19,10 +19,10 @@ The repository contains the following directories and files:
 ## Overview
 This Terraform setup automates the deployment of:
 
-An Azure Virtual Machine
-An Azure Key Vault to store secrets securely
-A randomly generated secret for VM access
-An Azure Bastion host for secure SSH access to the VM
+An Azure Virtual Machine.
+An Azure Key Vault to store secrets securely.
+A randomly generated secret for VM access.
+An Azure Bastion host for secure SSH access to the VM.
 
 ## Getting Started
 
