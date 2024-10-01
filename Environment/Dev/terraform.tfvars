@@ -1,5 +1,5 @@
 rg-details = { 
-Sanidhya = "west europe" }
+Sanidhya = "Brazil South" }
 
 stg-details = {
   sa1 = {
@@ -11,7 +11,7 @@ stg-details = {
   sa2 = {
     name                     = "sanidhya7392kjfsakjfvats"
     resource_group_name      = "Mradul"
-    location                 = "west europe"
+    location                 = "Brazil South"
     account_replication_type = "LRS"
   }
   sa3 = {
@@ -25,7 +25,7 @@ stg-details = {
 vnet-details = {
   vnet1 = {
     name                = "Sanidhya-network"
-    location            = "west europe"
+    location            = "Brazil South"
     resource_group_name = "Sanidhya"
     address_space       = ["10.0.0.0/16"]
   }
@@ -39,7 +39,7 @@ subnet-details = {
     resource_group_name  = "Sanidhya"
     virtual_network_name = "Sanidhya-network"
     address_prefixes     = ["10.0.0.0/24"]
-    location             = "west europe"
+    location             = "Brazil South"
     security_name        = "rule1"
     nsg_name             = "nsg1"
   }
@@ -49,7 +49,7 @@ subnet-details = {
   #   resource_group_name  = "Sanidhya"
   #   virtual_network_name = "Sanidhya-network"
   #   address_prefixes     = ["10.0.2.0/24"]
-  #  location="west europe"
+  #  location="Brazil South"
   #  security_name="rule3"
   #  nsg_name="nsg3"
   # }
@@ -58,7 +58,7 @@ subnet-details = {
   #   resource_group_name  = "Sanidhya"
   #   virtual_network_name = "Sanidhya-network"
   #   address_prefixes     = ["10.0.3.0/24"]
-  #  location="west europe"
+  #  location="Brazil South"
   #  security_name="rule4"
   #  nsg_name="nsg4"
   # }
@@ -68,7 +68,7 @@ subnet-details = {
 vm-details = {
   Frontendvm = {
     resource_group_name = "Sanidhya"
-    location            = "west europe"
+    location            = "Brazil South"
     size                = "Standard_F2"
     sub_name            = "Sanidhya-subnet"
     virtual_net_name    = "Sanidhya-network"
@@ -76,7 +76,7 @@ vm-details = {
   }
   Backendvm = {
     resource_group_name = "Sanidhya"
-    location            = "west europe"
+    location            = "Brazil South"
     size                = "Standard_F2"
     sub_name            = "Sanidhya-subnet"
     virtual_net_name    = "Sanidhya-network"
@@ -86,7 +86,7 @@ vm-details = {
 bastion-details = {
   bas1 = {
     pip_name             = "Bation-pip"
-    location             = "West Europe"
+    location             = "Brazil South"
     resource_group_name  = "Sanidhya"
     bas_name             = "Sanidhya-bastion"
     ip_bas_name          = "Sanidhya-configuration"
