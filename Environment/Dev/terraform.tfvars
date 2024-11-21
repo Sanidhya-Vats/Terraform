@@ -1,5 +1,6 @@
 rg-details = { 
-Sanidhya = "Brazil South" }
+Sanidhya = "Brazil South" 
+ }
 
 stg-details = {
   sa1 = {
