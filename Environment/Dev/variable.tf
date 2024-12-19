@@ -1,18 +1,22 @@
-
 variable "rg-details" {
-  }
-variable "stg-details" {
-    
-  }
-  variable "vnet-details" {
-    
-  }
-  variable "subnet-details" {
-    
-  }
-  variable "vm-details" {
-    
-  }
-    variable "bastion-details" {
-    
-  }
+  
+}
+
+variable "vnet-details" {
+  
+}
+variable "sub-details" {
+  
+}
+variable "nic-details" {
+  
+}
+variable "publicip-details" {
+  
+}
+variable "vm-details" {
+  
+}
+variable "bastion-details" {
+  
+}

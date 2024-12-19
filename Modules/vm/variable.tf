@@ -1,3 +1,3 @@
-variable "vm" {
+variable "vms" {
   
 }

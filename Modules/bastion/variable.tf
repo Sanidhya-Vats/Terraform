@@ -1,1 +1,6 @@
-variable "bastion" {}
+variable "pip-data" {
+  
+}
+variable "bastion" {
+  
+}

@@ -1,97 +1,113 @@
-rg-details = { 
-Sanidhya = "Brazil South" 
- }
+rg-details = {
+  Netflix = "centralindia"
 
-stg-details = {
-  sa1 = {
-    name                     = "sanidhya4647392vats"
-    resource_group_name      = "Sanidhya"
-    location                 = "south india"
-    account_replication_type = "LRS"
-  }
-  sa2 = {
-    name                     = "sanidhya7392kjfsakjfvats"
-    resource_group_name      = "Mradul"
-    location                 = "Brazil South"
-    account_replication_type = "LRS"
-  }
-  sa3 = {
-    name                     = "sanidhya7392kjisakjfvats"
-    resource_group_name      = "Naresh"
-    location                 = "east us"
-    account_replication_type = "LRS"
-  }
+
 }
 
 vnet-details = {
-  vnet1 = {
-    name                = "Sanidhya-network"
-    location            = "Brazil South"
-    resource_group_name = "Sanidhya"
+  vn = {
+    name                = "Netflix-Network"
+    resource_group_name = "Netflix"
+    location            = "centralindia"
     address_space       = ["10.0.0.0/16"]
   }
-
-
+}
+sub-details = {
+  sb1 = {
+    name                 = "Netflix-Subnet"
+    resource_group_name  = "Netflix"
+    virtual_network_name = "Netflix-Network"
+    address_prefixes     = ["10.0.0.64/29"]
+  }
+  sb2 = {
+    name                 = "Netflix-Subnet2"
+    resource_group_name  = "Netflix"
+    virtual_network_name = "Netflix-Network"
+    address_prefixes     = ["10.0.0.128/29"]
+  }
+  sb3 = {
+    name                 = "AzureBastionSubnet"
+    resource_group_name  = "Netflix"
+    virtual_network_name = "Netflix-Network"
+    address_prefixes     = ["10.0.0.0/26"]
+  }
+   sb4 = {
+    name                 = "AppGatewaySubnet"
+    resource_group_name  = "Netflix"
+    virtual_network_name = "Netflix-Network"
+    address_prefixes     = ["10.0.1.0/26"]
+  }
 }
 
-subnet-details = {
-  subnet1 = {
-    name                 = "Sanidhya-subnet"
-    resource_group_name  = "Sanidhya"
-    virtual_network_name = "Sanidhya-network"
-    address_prefixes     = ["10.0.0.0/24"]
-    location             = "Brazil South"
-    security_name        = "rule1"
-    nsg_name             = "nsg1"
+nic-details = {
+  Netflix-Nic = {
+    subnet_name="Netflix-Subnet"
+    virtual_network_name = "Netflix-Network"
+    name                = "Netflix-Nic"
+    resource_group_name = "Netflix"
+    location            = "centralindia"
+    ip_configuration = {
+      name                          = "firstconfig"
+      private_ip_address_allocation = "Dynamic"
+
+    }
+  }
+  Netflix-Nic2 = {
+     subnet_name="Netflix-Subnet2"
+     virtual_network_name = "Netflix-Network"
+    name                = "Netflix-Nic2"
+    resource_group_name = "Netflix"
+    location            = "centralindia"
+    ip_configuration = {
+      name                          = "secondconfig"
+      private_ip_address_allocation = "Dynamic"
+
+    }
   }
 
-  # subnet3 = {
-  #   name                 = "Sanidhya-subnet2"
-  #   resource_group_name  = "Sanidhya"
-  #   virtual_network_name = "Sanidhya-network"
-  #   address_prefixes     = ["10.0.2.0/24"]
-  #  location="Brazil South"
-  #  security_name="rule3"
-  #  nsg_name="nsg3"
-  # }
-  # subnet4 = {
-  #   name                 = "Sanidhya-subnet3"
-  #   resource_group_name  = "Sanidhya"
-  #   virtual_network_name = "Sanidhya-network"
-  #   address_prefixes     = ["10.0.3.0/24"]
-  #  location="Brazil South"
-  #  security_name="rule4"
-  #  nsg_name="nsg4"
-  # }
 }
 
-
+publicip-details = {
+  Bastion-ip = {
+    name                = "Netflix-Bastion-ip"
+    resource_group_name = "Netflix"
+    location            = "centralindia"
+    allocation_method   = "Static"
+  }
+   appgw-ip = {
+    name                = "Netflix-appgw-ip"
+    resource_group_name = "Netflix"
+    location            = "centralindia"
+    allocation_method   = "Static"
+  }
+}
 vm-details = {
-  Frontendvm = {
-    resource_group_name = "Sanidhya"
-    location            = "Brazil South"
+  vm1 = {
+    nicname             = "Netflix-Nic"
+    resource_group_name = "Netflix"
+    name                = "Netflix-machine"
+    location            = "central india"
     size                = "Standard_F2"
-    sub_name            = "Sanidhya-subnet"
-    virtual_net_name    = "Sanidhya-network"
-
   }
-  Backendvm = {
-    resource_group_name = "Sanidhya"
-    location            = "Brazil South"
+    vm2 = {
+    nicname             = "Netflix-Nic2"
+    resource_group_name = "Netflix"
+    name                = "Netflix-machine2"
+    location            = "central india"
     size                = "Standard_F2"
-    sub_name            = "Sanidhya-subnet"
-    virtual_net_name    = "Sanidhya-network"
   }
 }
+
+
+
 
 bastion-details = {
   bas1 = {
-    pip_name             = "Bation-pip"
-    location             = "Brazil South"
-    resource_group_name  = "Sanidhya"
-    bas_name             = "Sanidhya-bastion"
-    ip_bas_name          = "Sanidhya-configuration"
-    virtual_network_name = "Sanidhya-network"
-    address_prefixes     = ["10.0.1.0/26"]
+    pip="Bastion-ip"
+    name                = "Netflix-Bastion"
+    location            = "centralindia"
+    resource_group_name = "Netflix"
+    ipname              = "configuration"
+    virtual_network_name = "Netflix-Network"
   }
 }
